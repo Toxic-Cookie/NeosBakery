@@ -44,6 +44,8 @@ if bakeJob["BakeType"] == 2:
 bpy.ops.object.select_all(action="SELECT")
 bpy.ops.object.delete()
 _scene.render.engine = "CYCLES"
+_scene.cycles.device = "GPU"
+_scene.cycles.feature_set = "EXPERIMENTAL"
 
 if bakeJob["BakeMethod"] == 1:
     bpy.context.scene.use_nodes = True

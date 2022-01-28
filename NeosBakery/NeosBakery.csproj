@@ -72,7 +72,6 @@
     <Compile Include="Core\ProceduralMeshDefinitions.cs" />
     <Compile Include="Core\Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Temp\Debug.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Python\bake.py" />
