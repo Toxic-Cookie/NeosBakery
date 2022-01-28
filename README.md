@@ -19,6 +19,7 @@ A light baking solution for NeosVR.
 4. Upscaling is only reasonable up to 4096 depending on the item being baked.
 5. Blender doesn't like to close itself sometimes. This can be worked around by focusing on or away from blender's window. (Only manually close Blender if its window is not grey)
 6. Blender doesn't do a great job at creating lightmap UVs and baking with them. (Strange artifacts arise) Burn Albedo is the better option of the two methods.
+7. Currently only PBS_Metallic and PBS_Specular are supported for baking.
 
 # Planned Features
 1. Possibly the addition of procedural textures being supported.
