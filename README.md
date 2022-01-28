@@ -8,6 +8,10 @@ A light baking solution for NeosVR.
 4. Extract the contents into your nml_mods folder.
 5. Done!
 
+# Usage
+1. Equip a DevToolTip and open a create menu.
+2. Select the Light Baker Wizard option.
+
 # Known Issues
 1. Oddly specific models don't play nice with Assimp and will crash Neos instantly regardless of how they're imported/exported.
 2. Meshes without proper UVs will not bake correctly. For some reason, some procedural meshes do not export with correct UVs.
