@@ -17,7 +17,7 @@ namespace NeosBakery.Core
     {
         public override string Name => "NeosBakery";
         public override string Author => "Toxic_Cookie";
-        public override string Version => "1.0.0";
+        public override string Version => "1.0.2";
         public override string Link => "https://github.com/Toxic-Cookie/NeosBakery";
 
         public override void OnEngineInit()
@@ -47,20 +47,23 @@ namespace NeosBakery.Core
                     await Task.Delay(TimeSpan.FromSeconds(Engine.Current.WorldManager.FocusedWorld.Time.Delta + 0.01f)).ConfigureAwait(continueOnCapturedContext: false);
                     await default(ToWorld);
 
-                    foreach (Text text in reference.Target.Slot.GetComponentsInChildren<Text>())
+                    List<Text> texts = reference.Target.Slot.GetComponentsInChildren<Text>();
+
+                    if (texts[0] == null)
                     {
-                        if (text.Content.Value.Contains("Empty"))
-                        {
-                            Slot buttonSlot = text.Slot.Parent.Duplicate();
-                            buttonSlot.GetComponentInChildren<Text>().Content.Value = "Light Baker Wizard";
-                            buttonSlot.GetComponent<ButtonRelay<string>>().Destroy();
-
-                            Button button = buttonSlot.GetComponent<Button>();
-                            button.LocalPressed += Button_LocalPressed;
-
-                            break;
-                        }
+                        return;
                     }
+                    if (!texts[0].Content.Value.Contains("3D"))
+                    {
+                        return;
+                    }
+
+                    Slot buttonSlot = texts[8].Slot.Parent.Duplicate();
+                    buttonSlot.GetComponentInChildren<Text>().Content.Value = "Light Baker Wizard";
+                    buttonSlot.GetComponent<ButtonRelay<string>>().Destroy();
+
+                    Button button = buttonSlot.GetComponent<Button>();
+                    button.LocalPressed += Button_LocalPressed;
                 });
             }
             static void Button_LocalPressed(IButton button, ButtonEventData eventData)

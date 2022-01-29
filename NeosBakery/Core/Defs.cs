@@ -10,7 +10,6 @@ using FrooxEngine;
 
 namespace NeosBakery.Core
 {
-    //TODO: More documentation.
     static class Defs
     {
         public enum ViewType
@@ -172,7 +171,6 @@ namespace NeosBakery.Core
         public struct LightDefinition
         {
             public readonly TransformDefinition Transform;
-            //Point, Directional(Sun), Spot
             public readonly int LightType;
             public readonly float[] Color;
             public readonly float Watts;
@@ -185,7 +183,7 @@ namespace NeosBakery.Core
                 Color = new float[4] { light.Color.Value.r, light.Color.Value.g, light.Color.Value.b, light.Color.Value.a };
 
                 float rgb = Math.Max(Math.Max(light.Color.Value.r, light.Color.Value.g), light.Color.Value.b);
-                //Convert from Intensity and Range to Watts. Might need more tweaking.
+
                 switch (light.LightType.Value)
                 {
                     case FrooxEngine.LightType.Point:

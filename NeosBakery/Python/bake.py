@@ -15,7 +15,7 @@ bakeJob = json.load(open(NeosBakeryPath + "BakeJob.json"))
 
 _scene = bpy.context.scene
 
-_scene.tool_settings.transform_pivot_point = 'ACTIVE_ELEMENT'
+_scene.tool_settings.transform_pivot_point = "ACTIVE_ELEMENT"
 _scene.render.image_settings.file_format = "PNG"
 _scene.render.image_settings.color_mode = "RGBA"
 _scene.world.use_nodes = True
@@ -164,7 +164,9 @@ for bakeObject in bakeJob["BakeObjects"]:
         currentMaterial.use_nodes = True
         nodetree = currentMaterial.node_tree
         nodes = currentMaterial.node_tree.nodes
-        inputs = nodes["Principled BSDF"].inputs
+        bsdfNode = nodes.new(type="ShaderNodeBsdfPrincipled")
+        nodetree.links.new(bsdfNode.outputs["BSDF"], nodes["Material Output"].inputs["Surface"])
+        inputs = bsdfNode.inputs
         inputs["Base Color"].default_value[0] = _material["AlbedoColor"][0]
         inputs["Base Color"].default_value[1] = _material["AlbedoColor"][1]
         inputs["Base Color"].default_value[2] = _material["AlbedoColor"][2]
