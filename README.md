@@ -1,12 +1,15 @@
 # NeosBakery
 A light baking solution for NeosVR.
 
-# Installing
+# Prequisites
 1. You must first install [NeosModLoader](https://github.com/zkxs/NeosModLoader).
-2. You must also install [Blender 3.0](https://www.blender.org/download/) (You might be able to get away with alternate versions but I can verify 3.0 works.)
-3. Download the latest NeosBakery [release](https://github.com/Toxic-Cookie/NeosBakery/releases).
-4. Extract the contents into your nml_mods folder.
-5. Done!
+2. You must also install [Blender 3.0](https://www.blender.org/download/) you may install it anywhere (You might be able to get away with alternate versions but I can verify 3.0 works.)
+3. Done!
+
+# Installing
+1. Download the latest release of [NeosBakery](https://github.com/Toxic-Cookie/NeosBakery/releases).
+2. Extract the contents of the latest zip release (NeosBakery x.x.x.zip) into your nml_mods folder. (Both _NeosBakery and NeosBakery.dll need to be in your nml_mods folder)
+3. Done!
 
 # Usage
 1. Equip a DevToolTip and open a create menu.
